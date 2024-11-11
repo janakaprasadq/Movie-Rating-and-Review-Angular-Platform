@@ -1,0 +1,25 @@
+.preview-container {
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  margin-bottom: 20px;
+}
+
+.movie-poster-preview {
+  max-width: 300px; /* Limits the width of the image */
+  max-height: auto; /* Limits the height of the image */
+  border-radius: 8px; /* Adds slight rounding for aesthetics */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for better visibility */
+}
+
+.row {
+  display: flex;
+  flex-direction: column; /* Stacks form fields vertically */
+  justify-content: center; /* Centers form content vertically */
+  align-items: center; /* Centers form content horizontally */
+  height: auto;
+  padding: 20px; /* Adds padding to the form */
+}
+
+.full-width {
+  width: 50vw;
+}

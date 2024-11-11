@@ -1,0 +1,64 @@
+.movie-card {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  border: 1px solid #424242;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%; /* Ensure card takes up full width */
+  height: auto; /* Allow flexible height */
+  border-radius: 10px;
+  box-sizing: border-box; /* Include padding and border in card size */
+  margin: 0 8px; /* Add horizontal margin between cards */
+}
+
+.image-container {
+  border: 1px solid #444;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.movie-image {
+  width: auto;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-section {
+  border-top: 1px solid #444;
+  padding: 8px 0;
+  text-align: left;
+}
+
+.description {
+  flex-grow: 1;
+}
+
+.description-text {
+  max-height: 80px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #444;
+}
+
+.description-text::-webkit-scrollbar {
+  width: 8px;
+}
+
+.description-text::-webkit-scrollbar-track {
+  background-color: #444;
+}
+
+.description-text::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+h2 {
+  color: #f5c518;
+}

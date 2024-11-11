@@ -1,0 +1,66 @@
+.actor-card {
+  background-color: #2c2c2c; /* Dark background for the card */
+  color: #ffffff; /* White text for contrast */
+  border: 1px solid #424242; /* Darker border */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px; /* Fixed width for the card */
+  height: 400px; /* Fixed height for the card */
+  border-radius: 10px; /* Optional: round the card's edges */
+}
+
+.image-container {
+  border: 1px solid #444; /* Darker border for the image container */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.actor-image {
+  width: auto;
+  height: 100px;
+  object-fit: cover;
+}
+
+.card-section {
+  border-top: 1px solid #444; /* Darker border between sections */
+  padding: 8px 0;
+  text-align: left;
+}
+
+/* Biography Section Styling */
+.biography {
+  border-top: 1px solid #444;
+  padding: 8px 0;
+  flex-grow: 1;
+}
+
+.biography-text {
+  max-height: 80px; /* Limit the visible height */
+  overflow-y: auto; /* Enable scrolling if the text exceeds the height */
+  white-space: pre-wrap; /* Keep line breaks */
+  scrollbar-width: thin; /* Narrow scrollbar for Firefox */
+  scrollbar-color: #888 #444; /* Custom colors for the scrollbar */
+}
+
+/* Custom Scrollbar for Webkit Browsers (Chrome, Safari, Edge) */
+.biography-text::-webkit-scrollbar {
+  width: 8px;
+}
+
+.biography-text::-webkit-scrollbar-track {
+  background-color: #444; /* Darker background for the scrollbar track */
+}
+
+.biography-text::-webkit-scrollbar-thumb {
+  background-color: #888; /* Lighter color for the scrollbar thumb */
+  border-radius: 4px;
+}
+
+h2 {
+  color: #f5c518;
+}

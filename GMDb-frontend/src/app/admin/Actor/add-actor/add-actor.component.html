@@ -1,0 +1,111 @@
+<div class="container mt-4">
+  <h2>Add Actor</h2>
+  <form [formGroup]="actorForm" (ngSubmit)="onSubmit()">
+    <!-- Actor Name Input -->
+    <mat-form-field appearance="fill" class="w-100 mb-3">
+      <mat-label>Actor Name</mat-label>
+      <input
+        matInput
+        placeholder="Enter Actor Name"
+        formControlName="name"
+        required
+      />
+      <mat-error
+        *ngIf="actorForm.get('name')?.invalid && actorForm.get('name')?.touched"
+      >
+        Actor name is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Actor Birth Date -->
+    <mat-form-field appearance="fill" class="w-100 mb-3">
+      <mat-label>Birth Date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        placeholder="Choose Birth Date"
+        formControlName="birthDate"
+        required
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error
+        *ngIf="
+          actorForm.get('birthDate')?.invalid &&
+          actorForm.get('birthDate')?.touched
+        "
+      >
+        Birth date is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Actor Nationality -->
+    <mat-form-field appearance="fill" class="w-100 mb-3">
+      <mat-label>Nationality</mat-label>
+      <mat-select formControlName="nationality">
+        <mat-option *ngFor="let country of countries" [value]="country">
+          {{ country }}
+        </mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="
+          actorForm.get('nationality')?.invalid &&
+          actorForm.get('nationality')?.touched
+        "
+      >
+        Nationality is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Short Biography -->
+    <mat-form-field appearance="fill" class="w-100 mb-3">
+      <mat-label>Short Biography</mat-label>
+      <textarea
+        matInput
+        rows="3"
+        placeholder="Enter Short Biography"
+        formControlName="biography"
+      ></textarea>
+      <mat-error
+        *ngIf="
+          actorForm.get('biography')?.invalid &&
+          actorForm.get('biography')?.touched
+        "
+      >
+        Biography is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Image Upload -->
+
+    <div class="col-12 preview-container" *ngIf="imgUrl">
+      <img
+        [src]="imgUrl"
+        alt="Movie Poster"
+        class="movie-poster-preview"
+        style="max-width: 300px; max-height: auto; margin-bottom: 20px"
+      />
+    </div>
+
+    <div class="col-12" style="padding-bottom: 10px; padding-top: 10px">
+      <label for="moviePoster">Actor Image &nbsp; </label>
+      <input
+        id="actorImg"
+        type="file"
+        (change)="onFileSelected($event)"
+        accept="image/*"
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="actorForm.invalid"
+      class="w-100"
+    >
+      Add Actor
+    </button>
+  </form>
+</div>

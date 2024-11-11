@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h2>Actors</h2>
+  <div class="row">
+    <!-- Iterate through actors array to display each actor in a card -->
+    <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let actor of actors">
+      <mat-card class="mb-4 mat-elevation-z8 actor-card">
+        <div class="image-container">
+          <img
+            [src]="actor.image_url"
+            alt="{{ actor.name }}"
+            class="actor-image"
+          />
+        </div>
+
+        <div class="card-section">
+          <strong>{{ actor.name }}</strong>
+        </div>
+
+        <div class="card-section">Birth date - {{ actor.birth_date }}</div>
+
+        <div class="card-section">Nationality - {{ actor.nationality }}</div>
+
+        <div class="card-section biography">
+          <div class="biography-text">
+            {{ actor.biography }}
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+<form [formGroup]="form" class="formforcss" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <h2>Add Movie</h2>
+    <!-- Movie Poster Preview Section -->
+    <div class="col-12 preview-container" *ngIf="posterUrl">
+      <img
+        [src]="posterUrl"
+        alt="Movie Poster"
+        class="movie-poster-preview"
+        style="max-width: 300px; max-height: auto; margin-bottom: 20px"
+      />
+    </div>
+
+    <!-- Movie Poster Input (without mat-form-field) -->
+    <div class="col-12" style="padding-bottom: 10px; padding-top: 10px">
+      <label for="moviePoster">Movie Poster &nbsp; </label>
+      <input
+        id="moviePoster"
+        type="file"
+        (change)="onFileSelected($event)"
+        accept="image/*"
+      />
+    </div>
+
+    <div class="col-12">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Title</mat-label>
+        <input formControlName="title" matInput placeholder="Avengers" />
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea
+          formControlName="description"
+          matInput
+          placeholder="Ex. About movie..."
+        ></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Release Date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="release_date"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <!-- Error Message for Required Validation -->
+        <mat-error *ngIf="form.get('release_date')?.hasError('required')">
+          Release date is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Duration in minutes</mat-label>
+        <input formControlName="duration_minutes" matInput placeholder="120" />
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Trailer url</mat-label>
+        <input
+          formControlName="trailer_url"
+          matInput
+          placeholder="www.youtube.com/avengers"
+        />
+      </mat-form-field>
+    </div>
+
+    <!-- Genres (Multi-select dropdown) -->
+    <div class="col-12">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Genres</mat-label>
+        <mat-select formControlName="genres" multiple>
+          <mat-option
+            *ngFor="let genre of availableGenres"
+            [value]="genre.genre_id"
+          >
+            {{ genre.genre_name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('genres')?.hasError('required')">
+          At least one genre is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Actors (Multi-select dropdown) -->
+    <div class="col-12">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Actors</mat-label>
+        <mat-select formControlName="actors" multiple>
+          <mat-option
+            *ngFor="let actor of availableActors"
+            [value]="actor.actor_id"
+          >
+            {{ actor.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <button
+        style="border-radius: 5px"
+        mat-raised-button
+        color="primary"
+        type="submit"
+      >
+        Add Movie
+      </button>
+    </div>
+  </div>
+</form>

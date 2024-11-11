@@ -1,0 +1,50 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; // Full viewport height for centering
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px; // Limit the width of the login card
+  padding: 20px;
+  text-align: center;
+}
+
+.full-width {
+  width: 100%; // Make the form fields take full width
+}
+
+.login-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  a {
+    text-decoration: none;
+    color: #3f51b5;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+mat-card-header {
+  padding-bottom: 10px;
+}
+
+mat-card-title {
+  text-align: center;
+  font-size: 1.5rem; // Adjust font size as needed
+  font-weight: bold;
+}
+.submit-login {
+  width: 100%;
+  border-radius: 2px;
+}

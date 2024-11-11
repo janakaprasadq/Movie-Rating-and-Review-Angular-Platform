@@ -1,0 +1,19 @@
+.active-link {
+  font-weight: bold;
+  color: #007bff; /* Change this to the color you want for active links */
+}
+
+.navbar {
+  background-color: #1e1e1e; /* Dark Gray background */
+  color: #ffffff; /* White text color */
+}
+
+.navbar a {
+  color: #ffffff; /* White text for links */
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  background-color: #bb86fc; /* Light Purple on hover */
+  border-radius: 5px;
+}

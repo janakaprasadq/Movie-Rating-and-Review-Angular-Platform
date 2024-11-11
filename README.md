@@ -1,6 +1,6 @@
-# MovieVerse - A Movie Rating and Review Platform
+# GMDb - A Movie Rating and Review Platform
 
-MovieVerse is a full-stack application where users can browse, review, and rate movies. Built with Node.js, Express, MySQL, and Angular, this platform enables users to view movie details, add reviews, and discover genres and actors associated with each movie.
+GMDb is a full-stack application where users can browse, review, and rate movies. Built with Node.js, Express, MySQL, and Angular, this platform enables users to view movie details, add reviews, and discover genres and actors associated with each movie.
 
 ## Table of Contents
 - [Features](#features)
@@ -8,9 +8,8 @@ MovieVerse is a full-stack application where users can browse, review, and rate 
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Contributing](#contributing)
-- [License](#license)
+- [API Endpoints](#sample-api-endpoints)
+
 
 ## Features
 - View a list of movies with details, including description, duration, genres, and actors.
@@ -37,7 +36,7 @@ To get a local copy up and running, follow these simple steps.
 ### Clone the Repository
 
 
-git clone https://github.com/yourusername/MovieVerse.git
+git clone https://github.com/yourusername/GMDb.git
 cd MovieVerse
 
 
@@ -53,7 +52,7 @@ cd MovieVerse
     
 
 2. **Database Setup:**
-   - Create a MySQL database named `movieverse` (or as specified in your environment).
+   - Create a MySQL database named `movieverse` (as specified in your environment).
    - Run the provided SQL script (`database/schema.sql`) to create tables for movies, genres, and actors.
    - Update database connection details in `config/db.js`.
 
